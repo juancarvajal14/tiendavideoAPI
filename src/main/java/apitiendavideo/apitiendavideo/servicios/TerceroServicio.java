@@ -16,7 +16,7 @@ public class TerceroServicio implements ITerceroServicio{
 
     @Override
     public List<Tercero> listar() {
-        return repositorio.findAll();
+        return repositorio.listar();
     }
 
     @Override
@@ -27,6 +27,17 @@ public class TerceroServicio implements ITerceroServicio{
     @Override
     public List<Tercero> buscar(String nombre) {
         return repositorio.buscar(nombre);
+    }
+
+    @Override
+    public Tercero guardar(Tercero tercero) {
+        return repositorio.save(tercero);
+    }
+
+    @Override
+    public Tercero eliminar(Long id) {
+        repositorio.deleteById(id);
+        return null;  
     }
     
 }

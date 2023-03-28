@@ -28,8 +28,8 @@ public class PaisServicio implements IPaisServicio {
     }
 
     @Override
-    public List<Pais> buscar(String nombre) {
-        return repositorio.buscar(nombre);
+    public List<Pais> buscar(String pais) {
+        return repositorio.buscar(pais);
     }
 
     @Override

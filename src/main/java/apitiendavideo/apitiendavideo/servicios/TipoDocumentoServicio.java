@@ -16,7 +16,7 @@ public class TipoDocumentoServicio implements ITipoDocumentoServicio{
 
     @Override
     public List<TipoDocumento> listar() {
-        return repositorio.findAll();
+        return repositorio.listar();
     }
 
     @Override

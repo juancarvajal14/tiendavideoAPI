@@ -11,4 +11,8 @@ public interface ITecnologiaServicio {
     public Tecnologia obtener(Long id);
 
     public List<Tecnologia> buscar(String nombre);
+
+    public Tecnologia guardar(Tecnologia tecnologia);
+
+    public Tecnologia eliminar(Long id);
 }

@@ -16,7 +16,7 @@ public class TituloServicio implements ITituloServicio{
 
     @Override
     public List<Titulo> listar() {
-        return repositorio.findAll();
+        return repositorio.listar();
     }
 
     @Override

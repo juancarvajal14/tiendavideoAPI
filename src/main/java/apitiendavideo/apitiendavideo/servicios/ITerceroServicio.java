@@ -12,4 +12,8 @@ public interface ITerceroServicio {
 
     public List<Tercero> buscar(String nombre);
 
+    public Tercero guardar(Tercero tercero);
+
+    public Tercero eliminar(Long id);
+
 }

@@ -13,5 +13,8 @@ public interface RegionRepositorio extends JpaRepository<Region, Long>{
     
     @Query("SELECT r FROM Region r WHERE r.region like '%' || ?1 || '%'")
     List<Region> buscar(String nombre);
+
+    @Query("SELECT r FROM Region r order by id ASC")
+    List<Region> listar();
     
 }

@@ -14,5 +14,8 @@ public interface EmpresaRepositorio extends JpaRepository<Empresa, Long> {
     @Query("SELECT e FROM Empresa e WHERE e.nombre like '%' || ?1 || '%'")
     List<Empresa> buscar(String nombre);
 
+    @Query("SELECT e FROM Empresa e order by id ASC")
+    List<Empresa> listar();
+
 }
 

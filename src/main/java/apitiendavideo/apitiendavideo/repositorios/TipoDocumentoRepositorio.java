@@ -13,5 +13,8 @@ public interface TipoDocumentoRepositorio  extends JpaRepository<TipoDocumento, 
 
     @Query("SELECT td FROM TipoDocumento td WHERE td.tipo like '%' || ?1 || '%'")
     List<TipoDocumento> buscar(String nombre);
+
+    @Query("SELECT td FROM TipoDocumento td order by id ASC")
+    List<TipoDocumento> listar();
     
 }

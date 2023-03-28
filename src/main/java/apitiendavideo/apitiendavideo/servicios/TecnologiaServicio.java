@@ -16,7 +16,7 @@ public class TecnologiaServicio implements ITecnologiaServicio {
 
     @Override
     public List<Tecnologia> listar() {
-        return repositorio.findAll();
+        return repositorio.listar();
     }
 
     @Override
@@ -27,5 +27,16 @@ public class TecnologiaServicio implements ITecnologiaServicio {
     @Override
     public List<Tecnologia> buscar(String nombre) {
         return repositorio.buscar(nombre);
+    }
+
+    @Override
+    public Tecnologia guardar(Tecnologia tecnologia) {
+        return repositorio.save(tecnologia);
+    }
+
+    @Override
+    public Tecnologia eliminar(Long id) {
+        repositorio.deleteById(id);
+        return null;  
     }
 }

@@ -11,4 +11,8 @@ public interface IRegionServicio {
     public Region obtener(Long id);
 
     public List<Region> buscar(String nombre);
+
+    public Region guardar(Region region);
+
+    public Region eliminar(Long id);
 }

@@ -14,7 +14,7 @@ public class EmpresaServicio implements IEmpresaServicio {
 
     @Override
     public List<Empresa> listar() {
-        return repositorio.findAll();
+        return repositorio.listar();
     }
 
     @Override
@@ -25,6 +25,17 @@ public class EmpresaServicio implements IEmpresaServicio {
     @Override
     public List<Empresa> buscar(String nombre) {
         return repositorio.buscar(nombre);
+    }
+
+    @Override
+    public Empresa guardar(Empresa empresa) {
+        return repositorio.save(empresa);
+    }
+
+    @Override
+    public Empresa eliminar(Long id) {
+        repositorio.deleteById(id);
+        return null;  
     }
 
 }

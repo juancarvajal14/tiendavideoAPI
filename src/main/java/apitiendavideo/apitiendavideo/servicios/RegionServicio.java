@@ -16,7 +16,7 @@ public class RegionServicio implements IRegionServicio{
 
     @Override
     public List<Region> listar() {
-        return repositorio.findAll();
+        return repositorio.listar();
     }
 
     @Override
@@ -27,5 +27,16 @@ public class RegionServicio implements IRegionServicio{
     @Override
     public List<Region> buscar(String nombre) {
         return repositorio.buscar(nombre);
+    }
+
+    @Override
+    public Region guardar(Region region) {
+        return repositorio.save(region);
+    }
+
+    @Override
+    public Region eliminar(Long id) {
+        repositorio.deleteById(id);
+        return null;  
     }
 }

@@ -1,21 +1,35 @@
 package apitiendavideo.apitiendavideo.modelos;
 
 import javax.persistence.*;
-//import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 @Table(name = "Pais")
 public class Pais {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "secuencia_pais")
+    @GenericGenerator(name = "secuencia_pais", strategy = "increment")
     @Column(name = "Id")
     private Long id;
-    @Column(name = "Pais")
+
+    @Column(name = "Pais", length = 100, unique = true)
     private String nombre;
-    @Column(name = "CodigoAlfa2")
+
+    @Column(name = "Codigoalfa2", length = 2, nullable = true)
     private String codigoAlfa2;
-    @Column(name = "CodigoAlfa3")
+
+    @Column(name = "Codigoalfa3", length = 3, nullable = true)
     private String codigoAlfa3;
+
+    public Pais() {
+    }
+    
+    public Pais(Long id, String nombre, String codigoAlfa2, String codigoAlfa3) {
+        this.id = id;
+        this.nombre = nombre;
+        this.codigoAlfa2 = codigoAlfa2;
+        this.codigoAlfa3 = codigoAlfa3;
+    }
 
     public Long getId() {
         return id;

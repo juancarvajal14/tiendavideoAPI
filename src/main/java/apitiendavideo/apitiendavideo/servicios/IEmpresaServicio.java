@@ -11,5 +11,8 @@ public interface IEmpresaServicio {
 
     public List<Empresa> buscar(String nombre);
 
+    public Empresa guardar(Empresa empresa);
+
+    public Empresa eliminar(Long id);
 
 }

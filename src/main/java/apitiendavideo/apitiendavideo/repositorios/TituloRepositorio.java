@@ -13,5 +13,8 @@ public interface TituloRepositorio extends JpaRepository<Titulo, Long>{
 
     @Query("SELECT ti FROM Titulo ti WHERE ti.nombre like '%' || ?1 || '%'")
     List<Titulo> buscar(String nombre);
+
+    @Query("SELECT ti FROM Titulo ti order by id ASC")
+    List<Titulo> listar();
     
 }

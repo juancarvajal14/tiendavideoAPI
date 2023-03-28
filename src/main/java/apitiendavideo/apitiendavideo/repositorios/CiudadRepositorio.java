@@ -15,4 +15,7 @@ public interface CiudadRepositorio extends JpaRepository<Ciudad, Long> {
     @Query("SELECT c FROM Ciudad c WHERE c.ciudad like '%' || ?1 || '%'")
     List<Ciudad> buscar(String nombre);
 
+    @Query("SELECT c FROM Ciudad c order by id ASC")
+    List<Ciudad> listar();
+
 }
