@@ -12,4 +12,8 @@ public interface ITituloServicio {
 
     public List<Titulo> buscar(String nombre);
 
+    public Titulo guardar(Titulo titulo);
+
+    public Titulo eliminar(Long id);
+
 }

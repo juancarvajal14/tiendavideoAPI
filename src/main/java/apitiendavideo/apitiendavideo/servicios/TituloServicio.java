@@ -28,5 +28,16 @@ public class TituloServicio implements ITituloServicio{
     public List<Titulo> buscar(String nombre) {
         return repositorio.buscar(nombre);
     }
+
+    @Override
+    public Titulo guardar(Titulo titulo) {
+        return repositorio.save(titulo);
+    }
+
+    @Override
+    public Titulo eliminar(Long id) {
+        repositorio.deleteById(id);
+        return null;  
+    }
     
 }

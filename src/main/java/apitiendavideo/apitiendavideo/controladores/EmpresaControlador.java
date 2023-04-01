@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import apitiendavideo.apitiendavideo.modelos.Empresa;
+import apitiendavideo.apitiendavideo.modelos.Titulo;
 import apitiendavideo.apitiendavideo.servicios.IEmpresaServicio;
 
 @RestController
@@ -34,6 +35,11 @@ public class EmpresaControlador {
         return servicio.buscar(nombre);
     }
 
+    @RequestMapping(value = "/{nombre}/buscartitulos", method = RequestMethod.GET)
+    public List<Titulo> buscarTitulos(@PathVariable String nombre){
+        return servicio.buscarTitulos(nombre);
+    }
+
     @RequestMapping(value = "/agregar", method = RequestMethod.POST)
     public Empresa crear(@RequestBody Empresa empresa) {
         return servicio.guardar(empresa);
@@ -50,7 +56,7 @@ public class EmpresaControlador {
     }
 
     @DeleteMapping(value = "/eliminar/{id}")
-    public Empresa eliminar(@PathVariable("id")Long id) {
+    public boolean eliminar(@PathVariable("id")Long id) {
         return servicio.eliminar(id);
         
     }

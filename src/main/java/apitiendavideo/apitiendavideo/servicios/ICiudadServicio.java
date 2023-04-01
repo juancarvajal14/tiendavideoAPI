@@ -4,7 +4,6 @@ import java.util.List;
 
 import apitiendavideo.apitiendavideo.modelos.Ciudad;
 import apitiendavideo.apitiendavideo.modelos.Tercero;
-import apitiendavideo.apitiendavideo.modelos.Tercero;
 
 public interface ICiudadServicio {
     

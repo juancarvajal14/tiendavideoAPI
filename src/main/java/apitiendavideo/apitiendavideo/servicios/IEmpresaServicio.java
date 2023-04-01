@@ -2,6 +2,7 @@ package apitiendavideo.apitiendavideo.servicios;
 
 import java.util.List;
 import apitiendavideo.apitiendavideo.modelos.Empresa;
+import apitiendavideo.apitiendavideo.modelos.Titulo;
 
 public interface IEmpresaServicio {
    
@@ -11,8 +12,10 @@ public interface IEmpresaServicio {
 
     public List<Empresa> buscar(String nombre);
 
+    public List<Titulo> buscarTitulos(String nombre);
+
     public Empresa guardar(Empresa empresa);
 
-    public Empresa eliminar(Long id);
+    public boolean eliminar(Long id);
 
 }

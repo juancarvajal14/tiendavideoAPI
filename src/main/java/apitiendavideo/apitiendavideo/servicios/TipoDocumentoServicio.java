@@ -28,4 +28,15 @@ public class TipoDocumentoServicio implements ITipoDocumentoServicio{
     public List<TipoDocumento> buscar(String nombre) {
         return repositorio.buscar(nombre);
     }
+
+    @Override
+    public TipoDocumento guardar(TipoDocumento tipo) {
+        return repositorio.save(tipo);
+    }
+
+    @Override
+    public TipoDocumento eliminar(Long id) {
+        repositorio.deleteById(id);
+        return null;  
+    }
 }

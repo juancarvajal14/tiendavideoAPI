@@ -11,4 +11,8 @@ public interface ITipoDocumentoServicio {
     public TipoDocumento obtener(Long id);
 
     public List<TipoDocumento> buscar(String nombre);
+
+    public TipoDocumento guardar(TipoDocumento tipo);
+
+    public TipoDocumento eliminar(Long id);
 }
